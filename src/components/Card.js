@@ -6,24 +6,26 @@ import React from "react";
 const Card = ({ title, description, imageSrc }) => {
   return (
     <VStack
+      color="black"
       backgroundColor="white"
-      borderRadius="5%"
-      spacing={4}
-      align="start"
-      boxShadow="md"
-      width="100%"
+      cursor="pointer"
+      borderRadius="xl"
     >
-      <Image borderRadius="5%" src={imageSrc} alt={title} />
-      <Heading pl={4} pt={4} size="md" color="black">
-        {title}
-      </Heading>
-      <Text pl={4} color="grey">
-        {description}
-      </Text>
-      <HStack pl={4} pb={4}>
-        <Text color="black">See more</Text>
-        <FontAwesomeIcon color="black" icon={faArrowRight} size="1x" />
-      </HStack>
+      <Image borderRadius="xl" src={imageSrc} alt={title} />
+      <VStack spacing={4} p={4} alignItems="flex-start">
+        <HStack justifyContent="space-between" alignItems="center">
+          <Heading as="h3" size="md">
+            {title}
+          </Heading>
+        </HStack>
+        <Text color="#64748b" fontSize="lg">
+          {description}
+        </Text>
+        <HStack spacing={2} alignItems="center">
+          <p>See more</p>
+          <FontAwesomeIcon icon={faArrowRight} size="1x" />
+        </HStack>
+      </VStack>
     </VStack>
   );
 };

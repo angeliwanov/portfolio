@@ -5,7 +5,7 @@ import profile from "../images/profile.jpg";
 
 const greeting = "Hello, I am Angel!";
 const bio1 = "A frontend developer";
-const bio2 = "specialised in React";
+const bio2 = "specialized in React";
 
 const LandingSection = () => (
   <FullScreenSection
@@ -14,17 +14,21 @@ const LandingSection = () => (
     isDarkBackground
     backgroundColor="#2A4365"
   >
-    <VStack>
-      <Avatar size="2xl" name="Angel Ivanov" src={profile} />
-      <Heading size="md" color="white">
-        {greeting}
-      </Heading>
-      <Heading size="xl" color="white">
-        {bio1}
-      </Heading>
-      <Heading size="xl" color="white">
-        {bio2}
-      </Heading>
+    <VStack spacing={16}>
+      <VStack spacing={4} alignItems="center">
+        <Avatar src={profile} size="2xl" name="Your Name" />
+        <Heading as="h4" size="md" noOfLines={1}>
+          {greeting}
+        </Heading>
+      </VStack>
+      <VStack spacing={6}>
+        <Heading as="h1" size="3xl" noOfLines={1}>
+          {bio1}
+        </Heading>
+        <Heading as="h1" size="3xl" noOfLines={1}>
+          {bio2}
+        </Heading>
+      </VStack>
     </VStack>
   </FullScreenSection>
 );
